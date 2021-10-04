@@ -1,0 +1,7 @@
+*.iml
+.idea/
+.ipynb_checkpoints/
+imgs/
+__pycache__/
+**/*.mp4
+**/.DS_Store
