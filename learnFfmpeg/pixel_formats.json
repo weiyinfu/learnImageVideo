@@ -1,0 +1,5556 @@
+{
+    "pixel_formats": [
+        {
+            "name": "yuv420p",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuyv422",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "rgb24",
+            "nb_components": 3,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "bgr24",
+            "nb_components": 3,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuv422p",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuv444p",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuv410p",
+            "nb_components": 3,
+            "log2_chroma_w": 2,
+            "log2_chroma_h": 2,
+            "bits_per_pixel": 9,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuv411p",
+            "nb_components": 3,
+            "log2_chroma_w": 2,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "gray",
+            "nb_components": 1,
+            "bits_per_pixel": 8,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "monow",
+            "nb_components": 1,
+            "bits_per_pixel": 1,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 1,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 1
+                }
+            ]
+        },
+        {
+            "name": "monob",
+            "nb_components": 1,
+            "bits_per_pixel": 1,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 1,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 1
+                }
+            ]
+        },
+        {
+            "name": "pal8",
+            "nb_components": 1,
+            "bits_per_pixel": 8,
+            "flags": {
+                "big_endian": 0,
+                "palette": 1,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuvj420p",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuvj422p",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuvj444p",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "uyvy422",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "uyyvyy411",
+            "nb_components": 3,
+            "log2_chroma_w": 2,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "bgr8",
+            "nb_components": 3,
+            "bits_per_pixel": 8,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 3
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 3
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 2
+                }
+            ]
+        },
+        {
+            "name": "bgr4",
+            "nb_components": 3,
+            "bits_per_pixel": 4,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 1,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 1
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 2
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 1
+                }
+            ]
+        },
+        {
+            "name": "bgr4_byte",
+            "nb_components": 3,
+            "bits_per_pixel": 4,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 1
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 2
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 1
+                }
+            ]
+        },
+        {
+            "name": "rgb8",
+            "nb_components": 3,
+            "bits_per_pixel": 8,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 2
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 3
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 3
+                }
+            ]
+        },
+        {
+            "name": "rgb4",
+            "nb_components": 3,
+            "bits_per_pixel": 4,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 1,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 1
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 2
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 1
+                }
+            ]
+        },
+        {
+            "name": "rgb4_byte",
+            "nb_components": 3,
+            "bits_per_pixel": 4,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 1
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 2
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 1
+                }
+            ]
+        },
+        {
+            "name": "nv12",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "nv21",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "argb",
+            "nb_components": 4,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "rgba",
+            "nb_components": 4,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "abgr",
+            "nb_components": 4,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "bgra",
+            "nb_components": 4,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "gray16be",
+            "nb_components": 1,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "gray16le",
+            "nb_components": 1,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuv440p",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuvj440p",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuva420p",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 20,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "rgb48be",
+            "nb_components": 3,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "rgb48le",
+            "nb_components": 3,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "rgb565be",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 6
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 5
+                }
+            ]
+        },
+        {
+            "name": "rgb565le",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 6
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 5
+                }
+            ]
+        },
+        {
+            "name": "rgb555be",
+            "nb_components": 3,
+            "bits_per_pixel": 15,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 5
+                }
+            ]
+        },
+        {
+            "name": "rgb555le",
+            "nb_components": 3,
+            "bits_per_pixel": 15,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 5
+                }
+            ]
+        },
+        {
+            "name": "bgr565be",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 6
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 5
+                }
+            ]
+        },
+        {
+            "name": "bgr565le",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 6
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 5
+                }
+            ]
+        },
+        {
+            "name": "bgr555be",
+            "nb_components": 3,
+            "bits_per_pixel": 15,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 5
+                }
+            ]
+        },
+        {
+            "name": "bgr555le",
+            "nb_components": 3,
+            "bits_per_pixel": 15,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 5
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 5
+                }
+            ]
+        },
+        {
+            "name": "vaapi",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "yuv420p16le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuv420p16be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuv422p16le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuv422p16be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuv444p16le",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuv444p16be",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "dxva2_vld",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "rgb444le",
+            "nb_components": 3,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "rgb444be",
+            "nb_components": 3,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "bgr444le",
+            "nb_components": 3,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "bgr444be",
+            "nb_components": 3,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "ya8",
+            "nb_components": 2,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "bgr48be",
+            "nb_components": 3,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "bgr48le",
+            "nb_components": 3,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuv420p9be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 13,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuv420p9le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 13,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuv420p10be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 15,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuv420p10le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 15,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuv422p10be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 20,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuv422p10le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 20,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuv444p9be",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 27,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuv444p9le",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 27,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuv444p10be",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 30,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuv444p10le",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 30,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuv422p9be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 18,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuv422p9le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 18,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "gbrp",
+            "nb_components": 3,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "gbrp9be",
+            "nb_components": 3,
+            "bits_per_pixel": 27,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "gbrp9le",
+            "nb_components": 3,
+            "bits_per_pixel": 27,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "gbrp10be",
+            "nb_components": 3,
+            "bits_per_pixel": 30,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "gbrp10le",
+            "nb_components": 3,
+            "bits_per_pixel": 30,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "gbrp16be",
+            "nb_components": 3,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "gbrp16le",
+            "nb_components": 3,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuva422p",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuva444p",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuva420p9be",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 22,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuva420p9le",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 22,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuva422p9be",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 27,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuva422p9le",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 27,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuva444p9be",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 36,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuva444p9le",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 36,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 9
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "yuva420p10be",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 25,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuva420p10le",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 25,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuva422p10be",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 30,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuva422p10le",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 30,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuva444p10be",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 40,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuva444p10le",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 40,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuva420p16be",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 40,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuva420p16le",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 40,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuva422p16be",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuva422p16le",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuva444p16be",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 64,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yuva444p16le",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 64,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "vdpau",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "xyz12le",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 36,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "xyz12be",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 36,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "nv16",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "nv20le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 20,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "nv20be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 20,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "rgba64be",
+            "nb_components": 4,
+            "bits_per_pixel": 64,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "rgba64le",
+            "nb_components": 4,
+            "bits_per_pixel": 64,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "bgra64be",
+            "nb_components": 4,
+            "bits_per_pixel": 64,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "bgra64le",
+            "nb_components": 4,
+            "bits_per_pixel": 64,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "yvyu422",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "ya16be",
+            "nb_components": 2,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "ya16le",
+            "nb_components": 2,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "gbrap",
+            "nb_components": 4,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "gbrap16be",
+            "nb_components": 4,
+            "bits_per_pixel": 64,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "gbrap16le",
+            "nb_components": 4,
+            "bits_per_pixel": 64,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "qsv",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "mmal",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "d3d11va_vld",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "cuda",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "0rgb",
+            "nb_components": 3,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "rgb0",
+            "nb_components": 3,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "0bgr",
+            "nb_components": 3,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "bgr0",
+            "nb_components": 3,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "yuv420p12be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 18,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "yuv420p12le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 18,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "yuv420p14be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 21,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 14
+                }
+            ]
+        },
+        {
+            "name": "yuv420p14le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 21,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 14
+                }
+            ]
+        },
+        {
+            "name": "yuv422p12be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "yuv422p12le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "yuv422p14be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 28,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 14
+                }
+            ]
+        },
+        {
+            "name": "yuv422p14le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 28,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 14
+                }
+            ]
+        },
+        {
+            "name": "yuv444p12be",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 36,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "yuv444p12le",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 36,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "yuv444p14be",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 42,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 14
+                }
+            ]
+        },
+        {
+            "name": "yuv444p14le",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 42,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 14
+                }
+            ]
+        },
+        {
+            "name": "gbrp12be",
+            "nb_components": 3,
+            "bits_per_pixel": 36,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "gbrp12le",
+            "nb_components": 3,
+            "bits_per_pixel": 36,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "gbrp14be",
+            "nb_components": 3,
+            "bits_per_pixel": 42,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 14
+                }
+            ]
+        },
+        {
+            "name": "gbrp14le",
+            "nb_components": 3,
+            "bits_per_pixel": 42,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 14
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 14
+                }
+            ]
+        },
+        {
+            "name": "yuvj411p",
+            "nb_components": 3,
+            "log2_chroma_w": 2,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "bayer_bggr8",
+            "nb_components": 3,
+            "bits_per_pixel": 8,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 2
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 2
+                }
+            ]
+        },
+        {
+            "name": "bayer_rggb8",
+            "nb_components": 3,
+            "bits_per_pixel": 8,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 2
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 2
+                }
+            ]
+        },
+        {
+            "name": "bayer_gbrg8",
+            "nb_components": 3,
+            "bits_per_pixel": 8,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 2
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 2
+                }
+            ]
+        },
+        {
+            "name": "bayer_grbg8",
+            "nb_components": 3,
+            "bits_per_pixel": 8,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 2
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 2
+                }
+            ]
+        },
+        {
+            "name": "bayer_bggr16le",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "bayer_bggr16be",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "bayer_rggb16le",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "bayer_rggb16be",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "bayer_gbrg16le",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "bayer_gbrg16be",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "bayer_grbg16le",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "bayer_grbg16be",
+            "nb_components": 3,
+            "bits_per_pixel": 16,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 4
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 4
+                }
+            ]
+        },
+        {
+            "name": "xvmc",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "yuv440p10le",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 20,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuv440p10be",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 20,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "yuv440p12le",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "yuv440p12be",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "ayuv64le",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 64,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "ayuv64be",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 64,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "videotoolbox_vld",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "p010le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 15,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "p010be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 15,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "gbrap12be",
+            "nb_components": 4,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "gbrap12le",
+            "nb_components": 4,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "gbrap10be",
+            "nb_components": 4,
+            "bits_per_pixel": 40,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "gbrap10le",
+            "nb_components": 4,
+            "bits_per_pixel": 40,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "mediacodec",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "gray12be",
+            "nb_components": 1,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "gray12le",
+            "nb_components": 1,
+            "bits_per_pixel": 12,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "gray10be",
+            "nb_components": 1,
+            "bits_per_pixel": 10,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "gray10le",
+            "nb_components": 1,
+            "bits_per_pixel": 10,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "p016le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "p016be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 1,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 16
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 16
+                }
+            ]
+        },
+        {
+            "name": "d3d11",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "gray9be",
+            "nb_components": 1,
+            "bits_per_pixel": 9,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "gray9le",
+            "nb_components": 1,
+            "bits_per_pixel": 9,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 9
+                }
+            ]
+        },
+        {
+            "name": "gbrpf32be",
+            "nb_components": 3,
+            "bits_per_pixel": 96,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 32
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 32
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 32
+                }
+            ]
+        },
+        {
+            "name": "gbrpf32le",
+            "nb_components": 3,
+            "bits_per_pixel": 96,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 32
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 32
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 32
+                }
+            ]
+        },
+        {
+            "name": "gbrapf32be",
+            "nb_components": 4,
+            "bits_per_pixel": 128,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 32
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 32
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 32
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 32
+                }
+            ]
+        },
+        {
+            "name": "gbrapf32le",
+            "nb_components": 4,
+            "bits_per_pixel": 128,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 1,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 32
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 32
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 32
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 32
+                }
+            ]
+        },
+        {
+            "name": "drm_prime",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "opencl",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "gray14be",
+            "nb_components": 1,
+            "bits_per_pixel": 14,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 14
+                }
+            ]
+        },
+        {
+            "name": "gray14le",
+            "nb_components": 1,
+            "bits_per_pixel": 14,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 14
+                }
+            ]
+        },
+        {
+            "name": "grayf32be",
+            "nb_components": 1,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 32
+                }
+            ]
+        },
+        {
+            "name": "grayf32le",
+            "nb_components": 1,
+            "bits_per_pixel": 32,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 32
+                }
+            ]
+        },
+        {
+            "name": "yuva422p12be",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 36,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "yuva422p12le",
+            "nb_components": 4,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 36,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "yuva444p12be",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "yuva444p12le",
+            "nb_components": 4,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 48,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 1
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 12
+                },
+                {
+                    "index": 4,
+                    "bit_depth": 12
+                }
+            ]
+        },
+        {
+            "name": "nv24",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "nv42",
+            "nb_components": 3,
+            "log2_chroma_w": 0,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 24,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 1,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 8
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 8
+                }
+            ]
+        },
+        {
+            "name": "vulkan",
+            "nb_components": 0,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 1,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            }
+        },
+        {
+            "name": "y210be",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 20,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "y210le",
+            "nb_components": 3,
+            "log2_chroma_w": 1,
+            "log2_chroma_h": 0,
+            "bits_per_pixel": 20,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 0,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "x2rgb10le",
+            "nb_components": 3,
+            "bits_per_pixel": 30,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "x2rgb10be",
+            "nb_components": 3,
+            "bits_per_pixel": 30,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "x2bgr10le",
+            "nb_components": 3,
+            "bits_per_pixel": 30,
+            "flags": {
+                "big_endian": 0,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        },
+        {
+            "name": "x2bgr10be",
+            "nb_components": 3,
+            "bits_per_pixel": 30,
+            "flags": {
+                "big_endian": 1,
+                "palette": 0,
+                "bitstream": 0,
+                "hwaccel": 0,
+                "planar": 0,
+                "rgb": 1,
+                "alpha": 0
+            },
+            "components": [
+                {
+                    "index": 1,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 2,
+                    "bit_depth": 10
+                },
+                {
+                    "index": 3,
+                    "bit_depth": 10
+                }
+            ]
+        }
+    ]
+}

@@ -5,6 +5,9 @@ import pylab as plt
 from PIL import Image
 from moviepy.editor import *
 
+"""
+使用matplotlib生成图片帧，从而制作成文本帧
+"""
 a = """one two three four five eight nine ten eleven twelve""".split()
 b = "Spring Summer Autumn Winter".split()
 b = np.array(b).reshape(-1, 1)

@@ -1,0 +1,8 @@
+Devices:
+ D. = Demuxing supported
+ .E = Muxing supported
+ --
+  E audiotoolbox    AudioToolbox output device
+ D  avfoundation    AVFoundation input device
+ D  lavfi           Libavfilter virtual input device
+  E sdl,sdl2        SDL2 output device

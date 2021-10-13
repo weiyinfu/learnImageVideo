@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <!-- # block head (placeholder in theme.html) -->
+    <!-- # block head (content inherited from layout.html) -->
+    <title>
+        Capture/Capture/Desktop中文版本 – FFmpeg
+    </title>
+    <style>
+        pre {
+            font-family: Consolas;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<!-- # block body (content inherited from theme.html) -->
+<!--   # include 'site_header.html' (theme.html) -->
+<!--   end of site_header.html -->
+<div id="banner">
+
+
+</div>
+<div id="main">
+    <div id="pagepath" class="noprint">
+        <a class="pathentry first" title="查看 WikiStart" href="/wiki">wiki:</a><a href="/wiki/Capture" title="查看 Capture"
+                                                                                 class="pathentry">Capture</a><span
+            class="pathentry sep">/</span><a href="/wiki/Capture/Capture" title="查看 Capture/Capture" class="pathentry">Capture</a><span
+            class="pathentry sep">/</span><a href="/wiki/Capture/Capture/Desktop%E4%B8%AD%E6%96%87%E7%89%88%E6%9C%AC"
+                                             title="查看 Capture/Capture/Desktop中文版本" class="pathentry">Desktop中文版本</a>
+    </div>
+    <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="wiki narrow">
+        <div class="wikipage searchable">
+            <div id="wikipage" class="trac-content borderless"><h2 class="section" id="Linux系统">Linux 系统</h2>
+                <p>
+                    使用 <a href="https://ffmpeg.org/ffmpeg-devices.html#x11grab">x11grab</a> 设备采集视频图像:
+                </p>
+                <pre class="wiki">ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 output.mp4
+</pre>
+                <p>
+                    这条命令将会从桌面图像的左上角偏移坐标位置为 (x=100, y=200)处获取宽高为1024x768的图像, .
+                </p>
+                <p>
+                    如果需要加入音频，则采集 <a href="https://ffmpeg.org/ffmpeg-devices.html#alsa-1">ALSA</a> (参考 <a class="wiki"
+                                                                                                         href="/wiki/Capture/ALSA">Capture/ALSA</a>
+                    获得更多信息):
+                </p>
+                <pre class="wiki">ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f alsa -ac 2 -i hw:0 output.mkv
+</pre>
+                <p>
+                    或者采集 <a href="https://ffmpeg.org/ffmpeg-devices.html#pulse">pulse</a> 输入设备:
+                </p>
+                <pre class="wiki">ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f pulse -ac 2 -i default output.mkv
+</pre>
+                <h2 class="section" id="苹果OSX系统">苹果 OS X 系统</h2>
+                <p>
+                    使用 <a href="https://ffmpeg.org/ffmpeg-devices.html#avfoundation">avfoundation</a> 设备采集音视频:
+                </p>
+                <pre class="wiki">ffmpeg -f avfoundation -list_devices true -i ""
+</pre>
+                <p>
+                    这条命令执行后将列出所有 avfoundation 的音频、视频采集设备列表。
+                    可以通过指定想要采集的设备名采集音频、视频:
+                </p>
+                <pre class="wiki">ffmpeg -f avfoundation -i "&lt;screen device index&gt;:&lt;audio device index&gt;" out.mov
+</pre>
+                <p>
+                    这条命令执行后将会从 <code>&lt;screen device index&gt;</code> 编号处获得视频图像，从 <code>&lt;audio device
+                    index&gt;</code> 编号处获得音频数据写入至输出文件 <code>out.mov</code> 中.
+                </p>
+                <h2 class="section" id="Windows系统">Windows 系统</h2>
+                <p>
+                    使用 <a class="wiki" href="/wiki/DirectShow">DirectShow</a> <a class="ext-link"
+                                                                                 href="https://github.com/rdp/screen-capture-recorder-to-video-windows-free"><span
+                        class="icon">​</span>device</a>设备采集音视频数据:
+                </p>
+                <pre class="wiki">ffmpeg -f dshow -i video="screen-capture-recorder" output.flv
+</pre>
+                <p>
+                    执行这条命令后将会 从DirectShow 设备中获得桌面图像并输出为output。flv文件. 可以参考 <a class="ext-link"
+                                                                             href="http://betterlogic.com/roger/2010/07/list-of-available-directshow-screen-capture-filters/"><span
+                        class="icon">​</span>list of alternative devices</a>.
+                </p>
+                <p>
+                    如果需要采集视频外还需要采集音频则使用如下命令:
+                </p>
+                <pre class="wiki">ffmpeg -f dshow -i video="UScreenCapture":audio="Microphone" output.flv
+</pre>
+                <p>
+                    如果你想获得正在从扬声器播放的音频，需要配置 “Stereo Mix” 设备
+                </p>
+                <p>
+                    或者
+                </p>
+                <pre class="wiki">ffmpeg -f dshow -i video="UScreenCapture" -f dshow -i audio="Microphone" output.flv
+</pre>
+                <p>
+                    可以通过如下命令行列出所有dshow设备:
+                </p>
+                <pre class="wiki">ffmpeg -list_devices true -f dshow -i dummy
+</pre>
+                <p>
+                    同样可以使用 <a href="https://ffmpeg.org/ffmpeg-devices.html#gdigrab">gdigrab</a> 输入设备从Widnows系统桌面获得屏幕图像.
+                </p>
+                <h2 class="section" id="注意事项">注意事项</h2>
+                <p>
+                    如果你的配置比较低, 使用下面的命令可能会提高你的音视频编码效率，但是质量会稍微有些降低.
+                    在这种情况下,首先你需要获取并将获取的图像保存为未压缩的视频/音频，并且当你完成抓取过程然后开始将它转换为任何你所需要的编码:
+                </p>
+                <p>
+                    Linux:
+                </p>
+                <pre class="wiki">ffmpeg -framerate 25 -video_size 1024x768 -f x11grab -i :0.0+100,200 -f alsa -ac 2 -i pulse -vcodec libx264 -crf 0 -preset ultrafast -acodec pcm_s16le output.mkv
+ffmpeg -i output.mkv -acodec ... -vcodec ... final.mkv
+</pre>
+                <p>
+                    Windows:
+                </p>
+                <pre class="wiki">ffmpeg -f dshow -i video="screen-capture-recorder":audio="Microphone" -vcodec libx264 -crf 0 -preset ultrafast -acodec pcm_s16le output.mkv
+ffmpeg -i output.flv -acodec ... -vcodec ... final.mkv
+</pre>
+                <h2 class="section" id="无损录制">无损录制</h2>
+                <p>
+                    如果你想很好的将桌面图像录制下来，x264编码器可以做到，使用无损编码方式即可，例如：
+                </p>
+                <pre class="wiki">ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast capture.mkv
+</pre>
+                <p>
+                    <code>-qp 0</code> 这个参数是设置 x264 的压缩参数为无损压缩, <code>-preset ultrafast</code> 预设值参数将会尽快的进行 x264 编码压缩.
+                </p>
+                <p>
+                    这么做在当前主流的硬件设备上做不丢帧的编码是可以做到足够快的，并且还不会占用全部的CPU。
+                </p>
+                <p>
+                    可以通过一次录制，一次编码的方式进行无损编码压缩，录制的时候以最快速度将视频图像录制下来，然后对录制下来的图像进行慢速压缩，这样可以保证图像质量，并且可以保证视频不丢帧
+                </p>
+                <pre class="wiki">ffmpeg -i capture.mkv -c:v libx264 -qp 0 -preset veryslow capture_smaller.mkv
+</pre>
+                <p>
+                    参考 <a class="wiki" href="/wiki/Encode/H.264">Encode/H.264</a> 获得更多信息和例子.
+                </p>
+            </div>
+            <div class="trac-modifiedby">
+          <span>
+            <a href="/wiki/Capture/Capture/Desktop%E4%B8%AD%E6%96%87%E7%89%88%E6%9C%AC?action=diff&amp;version=1"
+               title="版本 1 来自 Steven Liu">Last modified</a>
+ <a class="timeline" href="/timeline?from=2017-01-23T16%3A07%3A17%2B02%3A00&amp;precision=second"
+    title="See timeline at 2017年1月23日 下午4:07:17">5年 ago</a>          </span>
+                <span class="trac-print">
+            Last modified on 2017年1月23日 下午4:07:17
+          </span>
+            </div>
+        </div>
+        <div class="trac-help">
+            <strong>Note:</strong>
+            See <a href="/wiki/TracWiki">TracWiki</a>
+            for help on using the wiki.
+        </div>
+    </div>
+    <!-- # block content (content inherited from layout.html) -->
+    <div id="altlinks">
+        <h3>用其他格式下载:</h3>
+        <ul>
+            <li class="last first">
+                <a rel="nofollow" href="/wiki/Capture/Capture/Desktop%E4%B8%AD%E6%96%87%E7%89%88%E6%9C%AC?format=txt"
+                   class="">
+                    纯文本</a>
+            </li>
+        </ul>
+    </div>
+    <!-- # endblock content (content inherited from layout.html) -->
+    <!-- # endblock content (placeholder in theme.html) -->
+</div>
+<div id="footer">
+    <hr>
+    <a id="tracpowered" href="https://trac.edgewall.org/"><img src="/chrome/common/trac_logo_mini.png" height="30"
+                                                               width="107" alt="Trac Powered"></a>
+    <p class="left">
+        Powered by <a href="/about"><strong>Trac 1.4.2</strong></a>
+        <br>
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>
+        . </p>
+    <p class="right">请访问Trac开源项目<br><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+</div>
+<!--   # include 'site_footer.html' (theme.html) -->
+<!--   end of site_footer.html -->
+<!-- # endblock body (content inherited from theme.html) -->
+</body>
+</html>
