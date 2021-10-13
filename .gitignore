@@ -1,7 +1,12 @@
 *.iml
 .idea/
 .ipynb_checkpoints/
-imgs/
 __pycache__/
 **/*.mp4
+**/*.mp3
+**/*.wav
+**/*.gif
 **/.DS_Store
+**/.pytest_cache/
+**/__pycache__/
+!imgs/*
