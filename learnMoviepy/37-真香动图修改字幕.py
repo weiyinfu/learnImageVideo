@@ -37,7 +37,8 @@ xingdaolong = "我乃零陵上将军邢道荣  汝是何人  速速下马来降 
 dapeng = "海淀区远大路世纪金源 十二点 明天谁迟到 谁请客".split()
 learn = "不想睡觉 只想编程 音视频编程 太好玩了！".split()
 bytedance = "住房有房补 吃饭管三餐 还发衣裳 诶妈！真香".split()
-words = bytedance
+aiops = "我搞bes 你搞watchman 他搞直播稳定平台 真卷".split()
+words = aiops
 region_list = [
     # 开始帧，结束帧，最小宽度（需要覆盖掉原来的文字）
     (0, 8, 236 - 65),

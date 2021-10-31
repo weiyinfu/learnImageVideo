@@ -85,10 +85,12 @@ film:
 30. ` ffprobe -show_pixel_formats -print_format json > pixel_formats.json`
 打印pixel_formats详细信息。  
 31. `ffmpeg -i input.flv pipe:1 | ffplay -i -`
-ffmpeg+ffplay，一边写一边播放。pipe:0表示输入，pipe:1表示输出，pipe:2表示错误流。也可以直接使用-作为占位符替代，在需要输入流的地方-表示输入流，在需要输出流的地方-表示输出流。    
-32. `ffmpeg -f avfoundation -r 30  -i 1:0 -f image2pipe  - | ffplay -`
+ffmpeg+ffplay，一边写一边播放。pipe:0表示输入，pipe:1表示输出，pipe:2表示错误流。也可以直接使用-作为占位符替代，在需要输入流的地方-表示输入流，在需要输出流的地方-表示输出流。   
+32. `ffmpeg -hide_banner -loglevel error   -i a.matroska -f matroska pipe:1  |ffplay -i -`
+matroska类型的格式能够流式访问。  
+33. `ffmpeg -f avfoundation -r 30  -i 1:0 -f image2pipe  - | ffplay -`
 一边录制一边播放。  
-33. `ffmpeg -i input.avi <options> -f matroska - | ffplay -`
+34. `ffmpeg -i input.avi <options> -f matroska - | ffplay -`
 一边往外写，一边播放。 
-34. `ffmpeg -i segment.ts -c copy -movflags frag_keyframe+empty_moov -f mp4 -`
+35. `ffmpeg -i segment.ts -c copy -movflags frag_keyframe+empty_moov -f mp4 -`
 导出的时候，导出mp4格式。如果没有movflags参数会报错。  [Stack Overflow](https://stackoverflow.com/questions/34123272/ffmpeg-transmux-mpegts-to-mp4-gives-error-muxer-does-not-support-non-seekable) [doc](https://ffmpeg.org/ffmpeg-formats.html#mov_002c-mp4_002c-ismv)

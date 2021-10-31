@@ -1,6 +1,7 @@
-看了moviepy、skvideo和sksound，发现这几个包实现非常简单，但是它们的写法也有一些瑕疵。于是整理了一个mediapy的包。本目录下存放使用mediapy读写多媒体数据的实例。  
+看了moviepy、skvideo和sksound，发现这几个包实现非常简单，都是ffmpeg+数据处理，但是它们的写法也有一些瑕疵。于是整理了一个mediapy的包。本目录下存放使用mediapy读写多媒体数据的实例。  
 
-skvideo和sksound相对割裂，无法统一起来。  
+* skvideo和sksound相对割裂，无法统一起来。
+* ffmpeg的功能没有充分体现出来，例如录制视频和音频。 
 
 # 基音断裂
 基音断裂意思是能量最高的音调存在突变，会导致扬声器的震动存在突变，导致声音不够流畅。  

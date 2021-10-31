@@ -9,7 +9,47 @@ from scipy import interpolate as it
 import mediapy.io as mp
 
 logger = mp.logger
+
 ma = [261.626, 293.665, 329.628, 349.228, 391.995, 440.000, 493.883, ]
+
+# 两只老虎简谱
+twotiger = """
+1 2 3 1  1 2 3 1
+3 4 5  3 4 5
+5 6 5 4 3 1  5 6 5 4 3 1
+3 5_ 1  3 5_ 1
+"""
+# 生日快乐歌
+birthday = """
+5 5 6 5 1^ 7
+5 5 6 5 2^ 1^
+5 5 5^ 3^ 1^ 7 6
+4^ 4^ 3^ 1^ 2^ 1^ 1^
+"""
+# 千与千寻
+qianyuqianxun = """
+1 2 3 1 5  3 2 5 2 1 6_ 3 1
+7_ 6_ 7_ 1 2 5_ 1 2 3 4  4 3 2 1 2
+1 2 3 1 5 3 2 5 2 1 6_ 6_ 7_ 1 5_
+5_ 6_ 7_ 1 2 5_ 1 2 3 4 4 3 2 1 1
+3 4 5 5 5 5   5 6 5 4 3 3 3 3 3 4 3 2 1 1 1 7_ 6_ 7_ 7_  1  2 2 3 2 3 2
+3 4 5 5 5 5   5 6 5 4 3 3 3 3 4 3 4 3 2 1 7_ 6_ 6_ 7_ 1 2 5_ 1 2 3 2 2 2 1   
+1
+"""
+# 世上只有妈妈好
+momo = """
+6  5 3 5 1^ 6 5 6 
+3 5 6 5 3  2 1 6_ 5 3 2
+2 3 5 5  6 3 2 1
+5 3 2 1 6_ 1 5_
+"""
+# 蜜雪冰城
+mixuebingcheng = """
+3 5 5 6 5 3 1  1 2 3 3 2 1 2
+3 5 5 6 5 3 1  1 2 3 3 2 2 1
+4 4 4 6  5 5 3 2
+3 5 5 6 5 3 1  1 2 3 3 2 2 1 
+"""
 
 
 class FreqWaveType:
@@ -90,7 +130,7 @@ def content2book(s: str, space_seconds: float):
     return book
 
 
-def concatenate_clips(a: List[np.ndarray]):
+def concatenate_clips(a: List[np.ndarray], new_point_count=4):
     ans = a[0]
     for i in range(1, len(a)):
         nex = a[i]
@@ -99,7 +139,7 @@ def concatenate_clips(a: List[np.ndarray]):
             continue
         if len(nex) == 0:
             continue
-        sz = 2
+        sz = new_point_count
         use = 5
         line = np.concatenate([ans[-use:], nex[:use]])
         beg = (len(line) - sz) // 2
@@ -113,7 +153,31 @@ def concatenate_clips(a: List[np.ndarray]):
     return ans
 
 
-def get_float_array(content: str, rate: int = 0, space_seconds=0.3, phi_smooth=False, freq_wav_type=FreqWaveType.three):
+def concatenate_clips_by_merge_common(a: List[np.ndarray], rate: int):
+    # 将若干个音频片段拼接起来，拼接过程中需要保证波形平滑连续
+    ans = a[0]
+    cover = round(80 / 8000 * rate)  # 根据不同的rate决定渐变部分的长度
+    for i in range(1, len(a)):
+        nex = a[i]
+        if len(ans) == 0:
+            ans = nex
+            continue
+        if len(nex) == 0:
+            continue
+        sz = min(cover, len(ans), len(nex))
+        weight = np.linspace(0, 1, sz)
+        merged = weight * nex[:sz] + (1 - weight) * ans[-sz:]
+        ans = np.concatenate([ans[:-sz], merged, nex[sz:]])
+    return ans
+
+
+class SmoothMethod:
+    phi_smooth = 'phi_smooth'
+    linear_smooth = 'linear_smooth'
+    bspline_smooth = 'bspline_smooth'
+
+
+def get_float_array(content: str, rate: int = 0, space_seconds=0.3, smooth_method=SmoothMethod.phi_smooth, freq_wav_type=FreqWaveType.three):
     book = content2book(content, space_seconds)
     big_freq = np.max([i[0] for i in book])
     if rate != 0 and big_freq * 2 > rate:
@@ -121,7 +185,8 @@ def get_float_array(content: str, rate: int = 0, space_seconds=0.3, phi_smooth=F
     if rate == 0:
         rate = big_freq * 2 + 10  # 应该略微高出最大频率
     rate = int(rate)
-    if phi_smooth:
+    if smooth_method == SmoothMethod.phi_smooth:
+        logger.info(f"using phi to smooth")
         phi = 0
         a = []
         for freq, duration in book:
@@ -132,14 +197,19 @@ def get_float_array(content: str, rate: int = 0, space_seconds=0.3, phi_smooth=F
     else:
         a = []
         for freq, duration in book:
-            now = freq2wave(freq, rate, duration)
+            now = freq2wave(freq, rate, duration, freq_wav_type=freq_wav_type)
             a.append(now)
-        a = concatenate_clips(a)
+        if smooth_method == SmoothMethod.bspline_smooth:
+            logger.info("bspline")
+            a = concatenate_clips(a)
+        elif smooth_method == SmoothMethod.linear_smooth:
+            logger.info(f"merge common")
+            a = concatenate_clips_by_merge_common(a, rate=rate)
     return rate, a
 
 
-def build_music(filepath, content, rate: int = 0, space_seconds=0.3, freq_wav_type=FreqWaveType.three):
-    rate, a = get_float_array(content, rate, space_seconds, freq_wav_type=freq_wav_type)
+def build_music(filepath: str, content: str, rate: int = 0, space_seconds=0.3, freq_wav_type=FreqWaveType.three, smooth_method: str = SmoothMethod.phi_smooth):
+    rate, a = get_float_array(content, rate, space_seconds, freq_wav_type=freq_wav_type, smooth_method=smooth_method)
     logger.info(f"writing file {a.shape} {a.dtype}")
     a = a * (2 ** 15)
     a = a.astype(np.int16)

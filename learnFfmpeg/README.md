@@ -123,3 +123,9 @@ Grab the X11 display with ffmpeg via
 
 `ffmpeg -f x11grab -video_size cif -framerate 25 -i :0.0+10,20 /tmp/out.mpg`
 0.0 is display.screen number of your X11 server, same as the DISPLAY environment variable. 10 is the x-offset and 20 the y-offset for the grabbing.
+
+# 比特率
+单位时间内的数据量，录制设备的传输速度必须大于比特率，否则会导致采样数据丢失（录制设备写不进去）。`sampleRate*帧大小`即为比特率。 
+
+# matroska
+matroska是一种非常完美的视频格式，它兼容各种格式，适应性超强。  
