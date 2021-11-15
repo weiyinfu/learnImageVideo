@@ -593,7 +593,7 @@ def check_play_args():
 check_play_args()
 
 
-def combine(file: str, video_file: str, audio_file: str, show_log=False, audio_loop=0, video_loop=0):
+def combine(file: str, video_file: str, audio_file: str, show_log=False, audio_loop=0, video_loop=0, by_video_time=True):
     # 将视频和音频融合在一起
     if video_file is None and audio_file is None:
         raise Exception("video and audio are both empty")
@@ -602,9 +602,15 @@ def combine(file: str, video_file: str, audio_file: str, show_log=False, audio_l
         if video_loop:
             input_list.extend(['-stream_loop', video_loop])
         input_list.extend(["-i", video_file])
+    video_duration = 0
+    if video_file:
+        video_meta = get_meta(video_file)
+        video_duration = float(video_meta.video_stream.duration)
     if audio_file:
         if audio_loop:
             input_list.extend(['-stream_loop', audio_loop])
+        if by_video_time and video_duration:
+            input_list.extend(['-t', video_duration])
         input_list.extend(["-i", audio_file])
     global_options = ['-y']  # 默认强制覆盖
     _ffmpeg_common(global_options, show_log)
