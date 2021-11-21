@@ -5,7 +5,10 @@ __pycache__/
 **/*.mp4
 **/*.mp3
 **/*.wav
+**/*.mov
 **/*.gif
+**/*.matroska
+**/*.png
 **/.DS_Store
 **/.pytest_cache/
 **/__pycache__/

@@ -33,6 +33,9 @@ Python处理视频的库有很多，大都是基于ffmpeg进行的。这些代�
 而音频人耳接收到的频率是20Hz到20000Hz，通常听得歌曲的频率是是440Hz附近。  
 视频在空间上更占资源，音频在时间上更占资源。音频的帧率是视频的300倍，视频每一帧的大小是`300*300`的矩形，视频所占资源依旧是音频的好几百倍，同时音频的压缩算法比视频更简单一些。    
 
+# 光线追踪渲染工具POV-RAY
+
+
 # 源代码
 * skimage：https://github.com/scikit-image/scikit-image  
 * movie py：https://github.com/Zulko/moviepy  

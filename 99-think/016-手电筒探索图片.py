@@ -37,5 +37,5 @@ song = """
 3 5 5 6 5 3 1  1 2 3 3 2 2 1 
 """
 mp.nmn.build_music("a.wav", song, 8000)
-mp.combine('b.mp4', 'a.mp4', 'a.wav', audio_loop=0)
+mp.combine('b.mp4', 'a.mp4', 'a.wav', audio_loop=1)
 mp.play('b.mp4')

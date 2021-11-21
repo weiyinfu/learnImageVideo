@@ -4,7 +4,8 @@ from skimage import io
 from mediapy import hand
 import mediapy as mp
 
-me = io.imread("../imgs/简笔画/me.jpg")
+# me = io.imread("../imgs/简笔画/me.jpg")
+me = io.imread("hi.jpg")
 img = hand.generate_simple_image(me)
 import pylab as plt
 
