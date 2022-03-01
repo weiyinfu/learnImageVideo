@@ -50,7 +50,7 @@ region_list = [
 
 def get_plot_image():
     cout = io.BytesIO()
-    plt.savefig(cout)
+    plt.savefig(cout, bbox_inches='tight', pad_inches=0)
     img = Image.open(cout)
     return np.array(img)
 
@@ -127,6 +127,8 @@ def main(show_image=False, verbose=0):
             plt.show()
     log.info(f"最终结果的大小{a.shape}")
     vio.vwrite("a.gif", a, inputdict={"-r": "8"}, outputdict={"-r": "8"}, verbosity=verbose)
+    import mediapy as mp
+    mp.play('a.gif')
 
 
 def test_word_image():
