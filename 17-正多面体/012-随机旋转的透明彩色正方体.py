@@ -1,7 +1,7 @@
 """
 练习三维投影到二维。
 
-彩色透明四面体
+先画远处的再画近处的，近处的会在一定程度上覆盖掉远处的。
 """
 
 import numpy as np
@@ -13,35 +13,41 @@ import mediapy as mp
 
 
 def make_cube():
-    a = [[0, 0, 0], [1, 0, 0], [1 / 2, 3 ** 0.5 / 2, 0]]
-    c = np.mean(a, axis=0)
-    area = 1 * 3 ** 0.5 / 2 * 1 / 2  # 底面面积
-    v = (1 / np.sqrt(2)) ** 3 / 3
-    z = v / area * 3
-    c[-1] = z
-    a.append(c)
-    edges = []
+    a = []
+    for i in (-1, 1):
+        for j in (-1, 1):
+            for k in (-1, 1):
+                a.append((i, j, k))
+    a = np.array(a)
+    edges = set()
     for i in range(len(a)):
         for j in range(i):
-            edges.append((i, j))
+            if np.linalg.norm(a[i] - a[j]) == 2:
+                edges.add((j, i))
+    edges = np.array(list(edges))
     faces = []
     for i in range(len(a)):
         for j in range(i):
             for k in range(j):
-                faces.append((i, j, k))
-    a = np.array(a)
-    edges = np.array(edges)
+                for l in range(k):
+                    good = False
+                    for t in range(3):
+                        if a[i][t] == a[j][t] == a[k][t] == a[l][t]:
+                            good = True
+                            break
+                    if not good:
+                        continue
+                    face = [i, j, k, l]
+                    face.sort(key=lambda x: np.linalg.norm(a[x] - a[i]))
+                    face[-1], face[-2] = face[-2], face[-1]
+                    faces.append(face)
     faces = np.array(faces)
-    center = np.mean(a, axis=0)
-    a -= center
     return a, edges, faces
 
 
 points, edges, faces = make_cube()
 print(len(faces), len(edges), len(points))
-face_color = np.random.randint(0, 255, (len(faces), 3))
-for f, t in edges:
-    print('边长', np.linalg.norm(points[f] - points[t]))
+face_color = np.random.randint(0, 255, (6, 3))
 
 
 def turn(p, alpha, beta, theta):
@@ -69,9 +75,8 @@ def get_cube(alpha, beta, theta):
 def draw_cube(cube):
     sz = 700
     img = np.zeros((sz, sz, 3), dtype=np.uint8)
-    center = np.mean(points, axis=0)  # 体心
-    radius = np.max(np.linalg.norm(points - center, axis=1))  # 半径
-    a = np.round(cube / radius * sz / 2 + sz / 2).astype(np.int)
+    r = sz / 2 / np.sqrt(3) - 3
+    a = np.round(cube * r + sz // 2).astype(np.int32)
     # 按照各个面到点(0,0,3)的距离进行排序画图
     dis = np.mean(np.linalg.norm(cube[faces] - (0, 0, 3), axis=2), axis=1)
     ind = np.argsort(dis)
@@ -107,4 +112,3 @@ def main(show=False):
 
 
 main()
-# make_cube()

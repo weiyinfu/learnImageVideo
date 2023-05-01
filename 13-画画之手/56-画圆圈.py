@@ -22,8 +22,8 @@ last = 0
 def get_background(cx, cy, r, theta):
     global last
     ang = np.linspace(last, theta, 100)
-    x = np.round(cx + r * np.cos(ang)).astype(np.int)
-    y = np.round(cy + r * np.sin(ang)).astype(np.int)
+    x = np.round(cx + r * np.cos(ang)).astype(np.int32)
+    y = np.round(cy + r * np.sin(ang)).astype(np.int32)
     global_image[x, y, :] = 255
     last = theta
     return global_image.copy()

@@ -91,7 +91,7 @@ def point2face(p, face):
 def sort_points(a):
     # 对组成n边形的结点进行排序，这些结点共面，如果不排序，这个面的点就是无序的
     q = [0]
-    vis = np.zeros(len(a), dtype=np.bool)
+    vis = np.zeros(len(a), dtype=bool)
     vis[0] = True
     while len(q) < len(a):
         unvis = np.logical_not(vis)
@@ -197,7 +197,7 @@ def get_cube(c: Cube, alpha, beta, theta):
 def draw_cube(cube: Cube, sz: int):
     img = np.zeros((sz, sz, 3), dtype=np.uint8)
     radius = np.max(np.linalg.norm(cube.points, axis=1))  # 半径
-    a = np.round(cube.points / radius * sz / 2 + sz / 2).astype(np.int)
+    a = np.round(cube.points / radius * sz / 2 + sz / 2).astype(np.int32)
     # 按照各个面到点(0,0,3)的距离进行排序画图
     dis = np.mean(np.linalg.norm(cube.points[cube.faces] - (0, 0, 3), axis=2), axis=1)
     ind = np.argsort(dis)
@@ -232,7 +232,7 @@ def main(show=False, show_which=-1):
         (image_size / 4 * 3, image_size / 6 * 3),
         (image_size / 4 * 3, image_size / 6 * 5),
     ]
-    position = np.array(position, dtype=np.int)
+    position = np.array(position, dtype=np.int32)
     ddd = get_rotate_delta(image_count)
     for i in tqdm(range(image_count)):
         d = ddd[i]

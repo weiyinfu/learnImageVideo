@@ -21,8 +21,8 @@ last = (width // 2, height // 2)
 
 def get_background(x, y):
     global last
-    xx = np.round(np.linspace(last[0], x, 100)).astype(np.int)
-    yy = np.round(np.linspace(last[1], y, 100)).astype(np.int)
+    xx = np.round(np.linspace(last[0], x, 100)).astype(np.int32)
+    yy = np.round(np.linspace(last[1], y, 100)).astype(np.int32)
     global_image[xx, yy, :] = 255
     last = (x, y)
     return global_image.copy()

@@ -1,5 +1,5 @@
 """
-字符图片
+字符图片，把字符转成图片
 """
 import tkinter
 import tkinter.font as font

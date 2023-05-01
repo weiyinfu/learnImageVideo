@@ -115,7 +115,7 @@ def test_list_sigma():
                     [0, 0, 0, 1, 1, 1]], np.float)
     img += 0.1 * rnd.normal(size=img.shape)
     result_sigma = np.array([[0, 0, 0, 1, 1, 1],
-                             [0, 0, 0, 1, 1, 1]], np.int)
+                             [0, 0, 0, 1, 1, 1]], np.int32)
     seg_sigma = slic(img, n_segments=2, sigma=[1, 50, 1], multichannel=False)
     assert_equal(seg_sigma, result_sigma)
 
@@ -125,9 +125,9 @@ def test_spacing():
     img = np.array([[1, 1, 1, 0, 0],
                     [1, 1, 0, 0, 0]], np.float)
     result_non_spaced = np.array([[0, 0, 0, 1, 1],
-                                  [0, 0, 1, 1, 1]], np.int)
+                                  [0, 0, 1, 1, 1]], np.int32)
     result_spaced = np.array([[0, 0, 0, 0, 0],
-                              [1, 1, 1, 1, 1]], np.int)
+                              [1, 1, 1, 1, 1]], np.int32)
     img += 0.1 * rnd.normal(size=img.shape)
     seg_non_spaced = slic(img, n_segments=2, sigma=0, multichannel=False,
                           compactness=1.0)

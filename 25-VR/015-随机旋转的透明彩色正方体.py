@@ -6,7 +6,6 @@
 
 import numpy as np
 import pylab as plt
-from skimage import draw
 from tqdm import tqdm
 
 import mediapy as mp
@@ -72,17 +71,61 @@ def get_cube(alpha, beta, theta):
     return aa
 
 
+def ball2rec(ps, rows, cols):
+    p = ps / np.linalg.norm(ps, axis=1, keepdims=True)
+    alpha = np.arccos(p[:, 2])
+    beta = np.arctan2(p[:, 0], p[:, 1])
+    tx = np.round(alpha / np.pi * rows) % rows
+    ty = np.round(beta / np.pi * cols) % cols
+    return tx, ty
+
+
+def ball2rec_one(p, rows, cols):
+    x, y = ball2rec(np.array([p]), rows, cols)
+    return x[0], y[0]
+
+
+def get_point_count(f, t, rows, cols):
+    fp = ball2rec_one(f, rows, cols)
+    tp = ball2rec_one(t, rows, cols)
+    point_count = np.linalg.norm(np.array(fp) - np.array(tp))
+    return int(point_count)
+
+
+def line(f, t, rows, cols):
+    # 三维空间中的直线(f,t)对应的真实图片上的坐标列表
+    point_count = get_point_count(f, t, rows, cols)
+    p = np.linspace(f, t, int(point_count))
+    return ball2rec(p, rows, cols)
+
+
+def get_face_points(A, B, C, D, rows, cols):
+    point_count = get_point_count(A, B, rows, cols)
+    fs = np.linspace(A, B, point_count)
+    ts = np.linspace(D, C, point_count)
+    ans = set()
+    for f, t in zip(fs, ts):
+        ps = line(f, t, rows, cols)
+        for p in ps:
+            ans.add((p[0], p[1]))
+    ans = list(ans)
+    xs = np.array([int(i[0]) for i in ans])
+    ys = np.array([int(i[1]) for i in ans])
+    return xs, ys
+
+
 def draw_cube(cube):
     sz = 700
     img = np.zeros((sz, sz, 3), dtype=np.uint8)
     r = sz / 2 / np.sqrt(3) - 3
-    a = np.round(cube * r + sz // 2).astype(np.int)
+    a = np.round((cube + np.array([-3, 0, 0])) * r + sz // 2).astype(np.int32)
     # 按照各个面到点(0,0,3)的距离进行排序画图
     dis = np.mean(np.linalg.norm(cube[faces] - (0, 0, 3), axis=2), axis=1)
     ind = np.argsort(dis)
     ind = ind[::-1]  # 先画远处的，再画近处的
     for face, color in zip(faces[ind], face_color[ind]):
-        xy = draw.polygon(a[face, 0], a[face, 1])
+        # xy = draw.polygon(a[face, 0], a[face, 1])
+        xy = get_face_points(a[face[0]], a[face[1]], a[face[2]], a[face[3]], sz, sz)
         img[xy] = np.round(color * 0.9 + img[xy] * 0.1).astype(np.uint8)
     return img
 
@@ -111,4 +154,9 @@ def main(show=False):
     mp.play('a.mp4')
 
 
-main()
+#
+# def test_get_facepoinst():
+#     get_face_points(())
+#
+main(True)
+# test_get_facepoinst()

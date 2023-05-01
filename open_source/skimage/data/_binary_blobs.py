@@ -46,7 +46,7 @@ def binary_blobs(length=512, blob_size_fraction=0.1, n_dim=2,
     shape = tuple([length] * n_dim)
     mask = np.zeros(shape)
     n_pts = max(int(1. / blob_size_fraction) ** n_dim, 1)
-    points = (length * rs.rand(n_dim, n_pts)).astype(np.int)
+    points = (length * rs.rand(n_dim, n_pts)).astype(np.int32)
     mask[[indices for indices in points]] = 1
     mask = gaussian(mask, sigma=0.25 * length * blob_size_fraction)
     threshold = np.percentile(mask, 100 * (1 - volume_fraction))

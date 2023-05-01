@@ -31,7 +31,7 @@ def get_background(x, y, color):
     for i in range(N):
         alpha = theta + i * np.pi * 2 / N
         px, py = cx + r * np.cos(alpha), cy + r * np.sin(alpha)
-        px, py = np.round(px).astype(np.int), np.round(py).astype(np.int)
+        px, py = np.round(px).astype(np.int32), np.round(py).astype(np.int32)
         px, py = np.clip(px, 0, width - 1), np.clip(py, 0, height - 1)
         global_image[px, py, :] = color
     last = (x, y, color)

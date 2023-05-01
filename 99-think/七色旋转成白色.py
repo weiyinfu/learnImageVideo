@@ -28,7 +28,7 @@ import pylab as plt
 
 def get_image(alpha):
     img = np.zeros((sz, sz, 3), dtype=np.uint8)
-    color_index = colors[np.array(((theta + alpha) // (np.pi * 2 / len(colors)) + len(colors)) % len(colors), dtype=np.int)]
+    color_index = colors[np.array(((theta + alpha) // (np.pi * 2 / len(colors)) + len(colors)) % len(colors), dtype=np.int32)]
     img[good_ind] = color_index[good_ind]
     return img
 

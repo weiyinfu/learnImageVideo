@@ -41,28 +41,28 @@ out3.mov还制定了`c:a copy`参数，`c:a`表示音频的编码方式，copy�
 19. `ffmpeg -i myfile.avi -target vcd /tmp/vcd.mpg`
 使用target可以简化选项，target可以指定一些参数模板。target类型包括五种：vcd, svcd, dvd, dv, dv50. 每种大类又可以使用前缀指定小类，pal-, ntsc- or film-，小类包括三种. 
     例如vcd等价于以下参数。 
-  ```plain
-pal:
+    ```plain
+    pal:
+        -f vcd -muxrate 1411200 -muxpreload 0.44 -packetsize 2324
+        -s 352x288 -r 25
+        -codec:v mpeg1video -g 15 -b:v 1150k -maxrate:v 1150v -minrate:v 1150k -bufsize:v 327680
+        -ar 44100 -ac 2
+        -codec:a mp2 -b:a 224k
+    
+    ntsc:
     -f vcd -muxrate 1411200 -muxpreload 0.44 -packetsize 2324
-    -s 352x288 -r 25
-    -codec:v mpeg1video -g 15 -b:v 1150k -maxrate:v 1150v -minrate:v 1150k -bufsize:v 327680
+    -s 352x240 -r 30000/1001
+    -codec:v mpeg1video -g 18 -b:v 1150k -maxrate:v 1150v -minrate:v 1150k -bufsize:v 327680
     -ar 44100 -ac 2
     -codec:a mp2 -b:a 224k
-
-ntsc:
--f vcd -muxrate 1411200 -muxpreload 0.44 -packetsize 2324
--s 352x240 -r 30000/1001
--codec:v mpeg1video -g 18 -b:v 1150k -maxrate:v 1150v -minrate:v 1150k -bufsize:v 327680
--ar 44100 -ac 2
--codec:a mp2 -b:a 224k
-
-film:
--f vcd -muxrate 1411200 -muxpreload 0.44 -packetsize 2324
--s 352x240 -r 24000/1001
--codec:v mpeg1video -g 18 -b:v 1150k -maxrate:v 1150v -minrate:v 1150k -bufsize:v 327680
--ar 44100 -ac 2
--codec:a mp2 -b:a 224k
-```
+    
+    film:
+    -f vcd -muxrate 1411200 -muxpreload 0.44 -packetsize 2324
+    -s 352x240 -r 24000/1001
+    -codec:v mpeg1video -g 18 -b:v 1150k -maxrate:v 1150v -minrate:v 1150k -bufsize:v 327680
+    -ar 44100 -ac 2
+    -codec:a mp2 -b:a 224k
+    ```
 20. `ffmpeg -i INPUT -attach DejaVuSans.ttf -metadata:s:2 mimetype=application/x-truetype-font out.mkv`
 为字幕添加字体文件。 
 21. `ffmpeg -dump_attachment:t:0 out.ttf -i INPUT`
@@ -94,3 +94,18 @@ matroska类型的格式能够流式访问。
 一边往外写，一边播放。 
 35. `ffmpeg -i segment.ts -c copy -movflags frag_keyframe+empty_moov -f mp4 -`
 导出的时候，导出mp4格式。如果没有movflags参数会报错。  [Stack Overflow](https://stackoverflow.com/questions/34123272/ffmpeg-transmux-mpegts-to-mp4-gives-error-muxer-does-not-support-non-seekable) [doc](https://ffmpeg.org/ffmpeg-formats.html#mov_002c-mp4_002c-ismv)
+36. mp4在PICO设备上无法播放，使用ffmpeg转换格式
+    ```
+    ffmpeg -i a.mp4 -vcodec h264 -crf 26  -pix_fmt yuv420p a-avc.mp4
+    ```
+37. linux使用x11grab设备采集视频图像
+
+    ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 output.mp4
+这条命令将会从桌面图像的左上角偏移坐标位置为 (x=100, y=200)处获取宽高为1024x768的图像.  
+如果需要加入音频，有两种：采集ALSA或者采集pulse。  
+采集ALSA：`ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f alsa -ac 2 -i hw:0 output.mkv`
+采集pulse：`ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f pulse -ac 2 -i default output.mkv`
+38. 苹果MacOS采集音视频，使用avfoundation采集。  
+首先需要查看设备列表： `ffmpeg -f avfoundation -list_devices true -i ""`
+然后执行命令`ffmpeg -f avfoundation -i "<screen device index>:<audio device index>" out.mov`。 这个命令`-f avfoundation`指定了输入流的格式。`-i`指定了视频设备编号和音频设备编号。这条命令执行后将会从 `<screen device index>` 编号处获得视频图像，从 `<audio device index>` 编号处获得音频数据写入至输出文件 out.mov 中.
+39. 

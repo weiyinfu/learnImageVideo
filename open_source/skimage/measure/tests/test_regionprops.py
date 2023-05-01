@@ -42,7 +42,7 @@ def test_all_props_3d():
             pass
 
 def test_dtype():
-    regionprops(np.zeros((10, 10), dtype=np.int))
+    regionprops(np.zeros((10, 10), dtype=np.int32))
     regionprops(np.zeros((10, 10), dtype=np.uint))
     assert_raises((TypeError), regionprops,
                   np.zeros((10, 10), dtype=np.float))
@@ -51,11 +51,11 @@ def test_dtype():
 
 
 def test_ndim():
-    regionprops(np.zeros((10, 10), dtype=np.int))
-    regionprops(np.zeros((10, 10, 1), dtype=np.int))
-    regionprops(np.zeros((10, 10, 1, 1), dtype=np.int))
-    regionprops(np.zeros((10, 10, 10), dtype=np.int))
-    assert_raises(TypeError, regionprops, np.zeros((10, 10, 10, 2), dtype=np.int))
+    regionprops(np.zeros((10, 10), dtype=np.int32))
+    regionprops(np.zeros((10, 10, 1), dtype=np.int32))
+    regionprops(np.zeros((10, 10, 1, 1), dtype=np.int32))
+    regionprops(np.zeros((10, 10, 10), dtype=np.int32))
+    assert_raises(TypeError, regionprops, np.zeros((10, 10, 10, 2), dtype=np.int32))
 
 
 def test_area():
@@ -138,7 +138,7 @@ def test_eccentricity():
     eps = regionprops(SAMPLE)[0].eccentricity
     assert_almost_equal(eps, 0.814629313427)
 
-    img = np.zeros((5, 5), dtype=np.int)
+    img = np.zeros((5, 5), dtype=np.int32)
     img[2, 2] = 1
     eps = regionprops(img)[0].eccentricity
     assert_almost_equal(eps, 0)
@@ -369,7 +369,7 @@ def test_weighted_moments_normalized():
 
 
 def test_label_sequence():
-    a = np.empty((2, 2), dtype=np.int)
+    a = np.empty((2, 2), dtype=np.int32)
     a[:, :] = 2
     ps = regionprops(a)
     assert len(ps) == 1
@@ -377,7 +377,7 @@ def test_label_sequence():
 
 
 def test_pure_background():
-    a = np.zeros((2, 2), dtype=np.int)
+    a = np.zeros((2, 2), dtype=np.int32)
     ps = regionprops(a)
     assert len(ps) == 0
 
@@ -397,7 +397,7 @@ def test_invalid_size():
 
 
 def test_equals():
-    arr = np.zeros((100, 100), dtype=np.int)
+    arr = np.zeros((100, 100), dtype=np.int32)
     arr[0:25, 0:25] = 1
     arr[50:99, 50:99] = 2
 

@@ -36,6 +36,31 @@ Python处理视频的库有很多，大都是基于ffmpeg进行的。这些代�
 # 光线追踪渲染工具POV-RAY
 
 
+# TODO
+RGB YUV互转
+https://www.google.com.hk/search?q=python%E5%9B%BE%E7%89%87%E8%BD%ACyuv&oq=python%E5%9B%BE%E7%89%87%E8%BD%ACyuv&aqs=chrome..69i57j0i30i546l2.7244j0j7&sourceid=chrome&ie=UTF-8
+
+https://blog.csdn.net/yuejisuo1948/article/details/83512539
+
+永不停止的音乐：https://flask.palletsprojects.com/en/1.1.x/patterns/streaming/
+
+使用ffmpeg实现ndarray转图片。
+声音证明波的位置不重要，重要的是波动。
+
+视频生成：先生成三维物体，求三维物体的各种视图。
+
+
+视频生成：
+* 表达自己的思想
+* 随机旋转的圆柱体，练习渲染
+* 旋转的人形物体，用球、立方体、圆柱等搭建一个人体模型
+
+
+给定文本，生成视频。一支笔正在写字的视频。  
+两人对话的文本+语音。
+
+做语音朗读器
+
 # 源代码
 * skimage：https://github.com/scikit-image/scikit-image  
 * movie py：https://github.com/Zulko/moviepy  

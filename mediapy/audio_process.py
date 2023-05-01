@@ -2,7 +2,9 @@ import numpy as np
 from tqdm import tqdm
 
 import mediapy.number_music_notation as nmn
-
+"""
+音频处理
+"""
 
 def sfft(a, rate: int, window: int, freq_bei: float, duration_bei: float, top: int = 4):
     b = []

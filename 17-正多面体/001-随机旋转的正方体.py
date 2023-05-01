@@ -69,7 +69,7 @@ def draw_cube(cube):
     sz = 700
     img = np.zeros((sz, sz, 3), dtype=np.uint8)
     r = sz / 2 / np.sqrt(3) - 3
-    aa = np.round(cube * r + sz // 2).astype(np.int)
+    aa = np.round(cube * r + sz // 2).astype(np.int32)
     for f, t in edges:
         xy = draw.line(*aa[f][:2], *aa[t][:2])
         img[xy] = 255

@@ -17,8 +17,8 @@ def get_background(fx, fy, tx, ty):
     img = global_image
     fx, fy, tx, ty = [int(i) for i in (fx, fy, tx, ty)]
     x, y = np.linspace(fx, tx, 100), np.linspace(fy, ty, 100)
-    x = np.round(np.clip(x, 0, width)).astype(np.int)
-    y = np.round(np.clip(y, 0, height)).astype(np.int)
+    x = np.round(np.clip(x, 0, width)).astype(np.int32)
+    y = np.round(np.clip(y, 0, height)).astype(np.int32)
     img[x, y, :] = 0
     img[x + 1, y + 1, :] = 0
     img = img.copy()

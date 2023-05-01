@@ -204,7 +204,7 @@ def test_mssim_vs_legacy():
 
 def test_invalid_input():
     X = np.zeros((3, 3), dtype=np.double)
-    Y = np.zeros((3, 3), dtype=np.int)
+    Y = np.zeros((3, 3), dtype=np.int32)
     assert_raises(ValueError, ssim, X, Y)
 
     Y = np.zeros((4, 4), dtype=np.double)

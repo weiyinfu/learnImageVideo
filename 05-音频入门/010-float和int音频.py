@@ -1,4 +1,5 @@
 import numpy as np
+import pylab as plt
 
 import mediapy as mp
 
@@ -11,7 +12,6 @@ _, d1 = mp.read("../imgs/taylor.wav")
 _, d2 = mp.read("../imgs/taylor.wav", out_audio_fmt="f32be")
 d1 = d1[:, 1]
 d2 = d2[:, 1]
-import pylab as plt
 
 ans = d1 / d2
 print(np.min(d2), np.max(d2))

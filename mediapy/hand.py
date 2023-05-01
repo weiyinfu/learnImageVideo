@@ -4,7 +4,9 @@ import numpy as np
 from skimage import color, filters, measure
 from skimage import io
 from tqdm import tqdm
-
+"""
+使用手绘制图片
+"""
 
 def get_hands():
     pen_point = {
@@ -62,7 +64,7 @@ def analyze_point_sequence(xs, ys):
     a.sort()
     a = np.array(a)
     q = [0]
-    visited = np.zeros(len(a), dtype=np.bool)
+    visited = np.zeros(len(a), dtype=bool)
     visited[0] = True
     for i in tqdm(range(len(a) - 1), desc='构图'):
         not_visited = np.logical_not(visited)
@@ -131,16 +133,16 @@ def draw_point_list(img, point_list, hand_image, hand_pointer, silent_count=100,
 
 
 def generate_simple_image(img):
-    grey_img = color.rgb2grey(img)
+    grey_img = color.rgb2gray(img)
     img = filters.sobel(grey_img)
     edges = measure.find_contours(grey_img, 0.5)
     for edge in edges:
-        x, y = edge[:, 0].astype(np.int), edge[:, 1].astype(np.int)
+        x, y = edge[:, 0].astype(np.int32), edge[:, 1].astype(np.int32)
         for xx, yy in zip(x, y):
             if img[xx, yy] > 0.9:
                 continue
             img[xx, yy] = 0.9
-    img = color.grey2rgb(1 - img)
+    img = color.gray2rgb(1 - img)
     img = np.round(img * 255).astype(np.uint8)
     # from skimage import exposure
     # img = exposure.equalize_hist(img)

@@ -1,4 +1,3 @@
-import inspect
 import json
 import os.path
 import platform
@@ -12,17 +11,20 @@ from pydantic import BaseModel
 from mediapy.log import logger
 
 """
-参考ffmpeg文档，使用python包装ffmpeg
+参考ffmpeg文档，使用python包装ffmpeg，用于生成视频、音频，执行ffmpeg的命令
 https://www.ffmpeg.org/documentation.html
 """
 
 
-def _ffmpeg_common(options, show_log: bool):
+def _ffmpeg_common(options: List[str], show_log: bool):
+    """
+    用于生成命令的公共参数。公共参数的作用包括：隐藏掉ffmpeg的banner，设置日志级别等
+    :param options: 已有的options列表，是一个字符串数组
+    :param show_log: 是否显示日志，如果传False，则日志级别为error级别，日志量会比较少
+    :return:
+    """
     if not show_log:
         options.extend(["-hide_banner", "-loglevel", "error"])
-
-
-matroska = 'matroska'
 
 
 class VideoStreamMeta(BaseModel):
@@ -121,6 +123,11 @@ class Meta(BaseModel):
 
 
 def meta_from_json(info: Dict) -> Meta:
+    """
+    把一个Dict类型的meta信息转成Python中的Meta数据结构
+    :param info: Dict类型的meta信息，可以与JSON等价
+    :return: Meta结构体
+    """
     codec_type2stream = {}
     format_meta = FormatMeta(**info['format'])
     for stream in info['streams']:
@@ -136,7 +143,12 @@ def meta_from_json(info: Dict) -> Meta:
 
 
 def probe(file: str, show_log=False) -> Dict:
-    # probe返回原始JSON串
+    """
+    封装ffmpeg的probe命令，探测给定文件的信息，返回一个JSON Dict
+    :param file: 需要探测的文件名称
+    :param show_log: 是否显示日志，默认为False
+    :return: 一个Dict，key表示meta信息的名称，value表示meta信息的取值
+    """
     options = ["-print_format", "json", "-show_streams", "-show_format", ]
     _ffmpeg_common(options, show_log)
     a = ['ffprobe'] + options + [file]
@@ -147,38 +159,52 @@ def probe(file: str, show_log=False) -> Dict:
 
 
 def get_meta(file: str, show_log=False) -> Meta:
+    """
+    类似probe函数，唯一的区别在于get_meta返回一个Python结构体，而probe直接返回原始数据
+    :param file: 需要探测的文件名称，例如可以是mp4或者mp3
+    :param show_log: 是否显示日志，默认为False
+    :return:
+    """
     # get meta返回结构体
     return meta_from_json(probe(file, show_log))
 
 
 class MediaType:
+    # 媒体的类型，包括视频和音频两种格式
     video = 'video'
     audio = 'audio'
 
 
 def detect_media_type(file: str) -> str:
-    want = None
+    """
+    根据后缀名探测文件的媒体类型
+    :param file: 给定的文件名称
+    :return: 返回MediaType
+    """
+    media_type = None
     ext = get_fmt_by_filename(file)
     if ext in ('mov', 'mp4', 'matroska'):
-        want = MediaType.video
+        media_type = MediaType.video
     elif ext in ('mp3', 'wav'):
-        want = MediaType.audio
-    return want
+        media_type = MediaType.audio
+    return media_type
 
 
 class AudioFormat:
-    s16le = 's16le'
-    s16be = 's16be'
-    s32le = 's32le'
-    s32be = 's32be'
-    s64le = 's64le'
-    s64be = 's64be'
-    f32le = 'f32le'
-    f32be = 'f32be'
-    f64le = 'f64le'
-    f64be = 'f64be'
+    # 音频的波形数据存储格式，主要使用大头小头字节序，使用的位数，使用整型还是浮点型三种情况组合。
+    s16le = 's16le'  # 有符号 16位 整型，小头序
+    s16be = 's16be'  # 有符号 16位 整型，大头序
+    s32le = 's32le'  # 有符号 32位 整型，小头序
+    s32be = 's32be'  # 有符号 32位 整型，大头序
+    s64le = 's64le'  # 有符号 64位 整型，小头序
+    s64be = 's64be'  # 有符号 64位 整型，大头序
+    f32le = 'f32le'  # 浮点数32位，小头序
+    f32be = 'f32be'  # 浮点数32位，大头序
+    f64le = 'f64le'  # 浮点数64位，小头序
+    f64be = 'f64be'  # 浮点数64位，大头序
 
 
+# 音频格式与numpy中dtype类型描述的映射
 audio_fmt2dtype = {
     's16le': "<i2",
     's16be': ">i2",
@@ -191,12 +217,12 @@ audio_fmt2dtype = {
     'f64le': '<f8',
     'f64be': '>f8',
 }
+# numpy类型与音频类型的映射
 audio_dtype2fmt = {
     np.int16: AudioFormat.s16le,
     np.int32: AudioFormat.s32le,
     np.int64: AudioFormat.s64le,
     np.float32: AudioFormat.f32le,
-    np.float: AudioFormat.f32le,
     np.float64: AudioFormat.f64le,
     np.dtype("int16"): AudioFormat.s16le,
     np.dtype("int32"): AudioFormat.s32le,
@@ -205,10 +231,12 @@ audio_dtype2fmt = {
     np.dtype("float64"): AudioFormat.f64le,
 }
 
+# 一帧数据的形状，用于描述数据的尺寸。可以是一个int元组、一个int数值（表示一维数组），一个int列表
 FrameShape = Union[List[int], Tuple, int]
 
 
 class ArrayMeta:
+    # 数组的meta信息，包含数组的数据类型和数组的尺寸信息
     def __init__(self, dtype, frame_shape: FrameShape):
         self.dtype = dtype
         self.frame_shape = frame_shape
@@ -218,6 +246,7 @@ class ArrayMeta:
 
 
 def connect_stream(cin: IO, cout: IO, block=False) -> List[threading.Thread]:
+    # 开启一个线程从cin里面读数据，然后把数据写入到cout中
     def connect():
         block_size = 40960
         try:
@@ -251,7 +280,7 @@ class ArrayPipe:
             logger.info(f"cin closed already")
             return
         if a.dtype != self.input_meta.dtype:
-            raise Exception(f"error data type : expecting={self.dtype} current={a.dtype}")
+            raise Exception(f"error data type : expecting={self.input_meta.dtype} current={a.dtype}")
         if len(a.shape) == 1 and self.input_meta.frame_shape == 1:
             pass
         elif list(a.shape[1:]) != list(self.input_meta.frame_shape):
@@ -302,7 +331,17 @@ def connect_pipe(pre: ArrayPipe, nex: ArrayPipe) -> ArrayPipe:
 
 
 def get_reader(file: str, media_type: str, frame_shape: FrameShape, out_audio_fmt='s16e', out_pix_fmt='rgb24', out_video_fmt='image2pipe', show_log=False) -> ArrayPipe:
-    # 说明：file参数是必需的，有些文件格式必须是seekable的，这就要求数据流不能从stdin里面读入，所以必须传递file参数。当不需要的时候，传递-然后处理stdin即可。
+    """
+    说明：file参数是必需的，有些文件格式必须是seekable的，这就要求数据流不能从stdin里面读入，所以必须传递file参数。当不需要的时候，传递-然后处理stdin即可。
+    :param file:
+    :param media_type:
+    :param frame_shape:
+    :param out_audio_fmt:
+    :param out_pix_fmt:
+    :param out_video_fmt:
+    :param show_log:
+    :return:
+    """
     global_options = []
     _ffmpeg_common(global_options, show_log)
     output_options = []
@@ -375,6 +414,7 @@ def get_writer(file: str, dtype, frame_shape: FrameShape, out_fmt: str, rate: in
     """
     如果是写音频，meta必须包含sample_rate
     如果是写视频，meta必须包含r_frame_rate
+    :param file:
     :param dtype:
     :param frame_shape:
     :param out_fmt:
@@ -418,7 +458,7 @@ def get_writer(file: str, dtype, frame_shape: FrameShape, out_fmt: str, rate: in
         input_list = [
             "-r", rate,
             '-f', 'rawvideo',
-            '-pix_fmt', 'rgb24',
+            '-pix_fmt', "rgb24",
             # '-vcodec', 'rawvideo',
             # "-pixel_format", "rgb24",
             "-s", f"{width}x{height}",
@@ -455,7 +495,7 @@ def get_fmt_by_filename(file: str) -> str:
     return out_fmt
 
 
-def write(file: str, data: np.ndarray, rate: int, show_log=False, media_type: str = None):
+def write(file: str, data: np.ndarray, rate: int, show_log=False, media_type: str = None, ):
     if not media_type:
         media_type = detect_media_type(file)
     if file not in ('', '-'):
@@ -584,15 +624,6 @@ def play_pipe(pipe: ArrayPipe,
     return p
 
 
-def check_play_args():
-    play_info = inspect.getfullargspec(play)
-    play_file_info = inspect.getfullargspec(play_pipe)
-    assert play_file_info.args[1:] == play_info.args[1:]
-
-
-check_play_args()
-
-
 def combine(file: str, video_file: str, audio_file: str, show_log=False, audio_loop=0, video_loop=0, by_video_time=True):
     # 将视频和音频融合在一起
     if video_file is None and audio_file is None:
@@ -622,6 +653,7 @@ def combine(file: str, video_file: str, audio_file: str, show_log=False, audio_l
 
 
 def print_record_devices(show_log=False):
+    # 打印播放设备信息
     if platform.system() == "Darwin":
 
         options = []
@@ -642,6 +674,18 @@ def print_record_devices(show_log=False):
 
 
 def get_record_pipe(video_src: str, audio_src: str, rate: int = 20, audio_rate=16000, width=1280, height=720, duration=0., show_log=False) -> ArrayPipe:
+    """
+    获取录音机录制数据，仅在苹果系统上可用
+    :param video_src:
+    :param audio_src:
+    :param rate:
+    :param audio_rate:
+    :param width:
+    :param height:
+    :param duration:
+    :param show_log:
+    :return:
+    """
     if platform.system() == "Darwin":
         global_options = ['-y']
         _ffmpeg_common(global_options, show_log)
@@ -676,3 +720,17 @@ def record_file_by_time(video_src: str, audio_src: str, output_file: str, rate: 
     p = get_record_pipe(video_src, audio_src, rate, duration=duration, show_log=show_log)
     with open(output_file, 'wb') as f:
         p.add_cout(f, block=True)
+
+
+def change_format(input_file: str, output_file: str, pix_fmt: str):
+    """
+    使用ffmpeg修改视频格式
+    :param input_file: 输入文件名称
+    :param output_file: 输出文件名称
+    :param pix_fmt: 像素格式
+    :return:
+    """
+    options = []
+    _ffmpeg_common(options, False)
+    a = ['ffmpeg'] + options + ['-y', '-i', input_file, '-pix_fmt', pix_fmt, output_file]
+    sp.check_call(a)

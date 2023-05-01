@@ -28,7 +28,7 @@ class TestConnectedComponents:
         assert self.x[0, 2] == 3
 
     def test_random(self):
-        x = (np.random.rand(20, 30) * 5).astype(np.int)
+        x = (np.random.rand(20, 30) * 5).astype(np.int32)
         labels = label(x)
 
         n = labels.max()
@@ -140,7 +140,7 @@ class TestConnectedComponents3d:
             "Data was modified!"
 
     def test_random(self):
-        x = (np.random.rand(20, 30) * 5).astype(np.int)
+        x = (np.random.rand(20, 30) * 5).astype(np.int32)
         labels = label(x)
 
         n = labels.max()

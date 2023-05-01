@@ -23,8 +23,8 @@ def get_background(x, y, color):
     if len(color) == 3:
         color = (*color, 255)
     global last
-    xx = np.round(np.linspace(last[0], x, 100)).astype(np.int)
-    yy = np.round(np.linspace(last[1], y, 100)).astype(np.int)
+    xx = np.round(np.linspace(last[0], x, 100)).astype(np.int32)
+    yy = np.round(np.linspace(last[1], y, 100)).astype(np.int32)
     cx, cy = width // 2 - 1, height // 2 - 1
     xx[xx >= cx] = (cx * 2 - xx)[xx >= cx]
     yy[yy >= cy] = (cy * 2 - yy)[yy >= cy]
